@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Maze</title>
+    <meta name="theme-color" content="#0f172a">
+    <meta name="description" content="Aprenda Python resolvendo desafios em um labirinto interativo.">
+    <!-- PWA -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#020617" />
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/icon-192x192.png" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .font-game { font-family: 'Press+Start+2P', cursive; }
+      .font-code { font-family: 'Fira Code', monospace; }
+      
+      @keyframes error-pulse {
+        0%, 100% { background-color: rgba(127, 29, 29, 0.2); border-color: #ef4444; }
+        50% { background-color: rgba(220, 38, 38, 0.4); border-color: #f87171; box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
+      }
+      .animate-error-flash {
+        animation: error-pulse 0.6s infinite;
+      }
+
+      /* Estilos para melhor experiência mobile PWA */
+      @media (display-mode: standalone) {
+        body {
+          user-select: none;
+        }
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+
+<link rel="stylesheet" href="/index.css">
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
